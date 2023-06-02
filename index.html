@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Admin Panel</title>
+  <script src="https://kit.fontawesome.com/74ad6da199.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+  <div class="container">
+    <!-- topbar starts here -->
+    <div class="topbar">
+      <div class="logo">
+        <h2>Brand.</h2>
+      </div>
+      <div class="search">
+        <input type="text" id="search" placeholder="search here" />
+        <label for="search"><i class="fas fa-search"></i></label>
+      </div>
+      <i class="fas fa-bell"></i>
+      <div class="user">
+        <img src="img/user.jpg" alt="" />
+      </div>
+    </div>
+    <!-- tobar ends -->
+
+    <!-- sidebar starts here -->
+    <div class="sidebar">
+      <ul>
+        <li>
+          <a href="#">
+            <i class="fas fa-th-large"></i>
+            <div>Dashboard</div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-user-graduate"></i>
+            <div>Students</div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <div>Teachers</div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-users"></i>
+            <div>Employees</div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-chart-bar"></i>
+            <div>Analytics</div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-hand-holding-usd"></i>
+            <div>Earnings</div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-cog"></i>
+            <div>Settings</div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa-solid fa-question"></i>
+            <div>Help</div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- sidebar ends -->
+
+    <!-- main body starts -->
+    <div class="main">
+      <!-- Cards -->
+      <div class="cards">
+        <div class="card">
+          <div class="card-content">
+            <div class="number">1217</div>
+            <div class="card-name">Students</div>
+          </div>
+          <div class="icon-box">
+            <i class="fas fa-user-graduate"></i>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="number">42</div>
+            <div class="card-name">Teachers</div>
+          </div>
+          <div class="icon-box">
+            <i class="fas fa-chalkboard-teacher"></i>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="number">68</div>
+            <div class="card-name">Empoyees</div>
+          </div>
+          <div class="icon-box">
+            <i class="fas fa-users"></i>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="number">$4500</div>
+            <div class="card-name">Earnings</div>
+          </div>
+          <div class="icon-box">
+            <i class="fas fa-dollar-sign"></i>
+          </div>
+        </div>
+      </div>
+      <!-- Charts -->
+      <div class="charts">
+        <div class="chart">
+          <h2>Earnings (past 12 months)</h2>
+          <canvas id="lineChart"></canvas>
+        </div>
+        <div class="chart" id="doughnut-chart">
+          <h2>Employees</h2>
+          <canvas id="doughnut"></canvas>
+        </div>
+
+      </div>
+      <!-- Table -->
+
+      <div class="table-container">
+
+        <div class="filter-container">
+          <div class="box1">
+            <label for="date-filter">Filter by Date:</label>
+          <input type="date" id="date-filter">
+          <button onclick="filterTable()">Filter</button>
+          </div>
+          <div class="box2">
+            <input type="text" name="myInput" id="myInput" placeholder="Search by name..." onkeyup="searchFun()">
+          </div>
+          
+        </div>
+        <table id="data-table">
+          <thead>
+              <tr>
+                  <th>Name</th>
+                  <th>Date</th>
+                  <th>Value</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>John Doe</td>
+                  <td>2023-05-31</td>
+                  <td>25</td>
+              </tr>
+              <tr>
+                  <td>Jane Smith</td>
+                  <td>2023-06-01</td>
+                  <td>50</td>
+              </tr>
+              <tr>
+                  <td>Michael Johnson</td>
+                  <td>2023-06-02</td>
+                  <td>75</td>
+              </tr>
+              <tr>
+                  <td>Sarah Williams</td>
+                  <td>2023-06-02</td>
+                  <td>40</td>
+              </tr>
+              <tr>
+                  <td>Robert Davis</td>
+                  <td>2023-06-03</td>
+                  <td>60</td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- main body ends -->
+
+  </div>
+  <script src="table.js"></script>
+  </script>
+  <script src="chart1.js"></script>
+  <script src="chart2.js"></script>
+
+</body>
+
+</html>
